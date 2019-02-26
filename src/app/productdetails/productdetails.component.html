@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <img src="{{'http://localhost:3000/images/product/'+pro_img}}"  style="margin-left: 400px;"  alt="no image" height="300px" width="300px">
+
+      <div class="col-md-9">
+        <h4 style="margin-left: 400px; margin-top: 50px; color:red;">
+          <font style="color:black;">PRODUCT_NAME</font> : {{pro_name}}</h4>
+        <h4 style="margin-left: 400px; color: blue;">
+          <font style="color:black;">PRODUCT_MFG</font> : {{pro_mfg}}</h4>
+        <h4 style="margin-left: 400px; color: blue;">
+          <font style="color:black;">PRODUCT_DES</font> : {{pro_desc}}</h4>
+        <h4 style="margin-left: 400px; color: blue;">
+          <font style="color:black;">PRODUCT_PRICE</font> : {{pro_price}}</h4>
+          <button class="btn btn-lg btn-primary" style="margin-left: 400px;"(click)="onAddToCart()">ADD CART</button>
+          <button class="btn btn-lg btn-danger" style="margin-left: 550px; margin-top:-63px;" (click)="oncancel()">CANCLE</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <h1>SIMILAR PRODUCT</h1>
+    <div class="col-sm-6 col-md-4" *ngFor="let item of pro_cat_arr;let i=index">
+      <div class="thumbnail">
+
+        <div class="caption">
+          <img src="{{'http://localhost:3000/images/product/'+item.pro_img}}" (click)="onclick(item)" alt="no image" height="200px" width="200px">
+          <h4 style="margin-top: 50px; color:red;">
+            <font style="color:black;">PRODUCT_NAME</font> : {{item.pro_name}}</h4>
+          <h4 style="color: blue;">
+            <font style="color:black;">PRODUCT_PRICE</font> : {{item.pro_price}}</h4>
+            <button class="btn btn-lg btn-primary" (click)="onAddToCart()">ADD CART</button>
+            <button class="btn btn-lg btn-danger" style="margin-left: 10px;" (click)="oncancel()">CANCLE</button>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-md-12" *ngFor="let item of arr1;let i=index">
+        <img src="{{item.p_img}}" style="margin-left: 400px;" alt="no image" height="300px" width="300px">
+
+        <div class="col-sm-6 col-md-9">
+          <h4 style="margin-left: 400px; margin-top: 50px; color: blue;"><font style="color:black;">PRODUCT_NAME</font> : {{item.p_name}}</h4>
+        <label style="margin-left: 400px;">{{item.p_mfg}}</label>
+        <label style="margin-left: 400px;">{{item.p_des}}</label>
+        <label style="margin-left: 400px;">{{item.p_price}}</label>
+            </div>
+ -->
+  </div>
+</div>
